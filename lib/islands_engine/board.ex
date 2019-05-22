@@ -22,7 +22,7 @@ defmodule IslandsEngine.Board do
     end)
   end
 
-  defp all_islands_positioned?(board), do: Enum.all?(Island.types(), &Map.has_key?(board, &1))
+  def all_islands_positioned?(board), do: Enum.all?(Island.types(), &Map.has_key?(board, &1))
 
   defp check_all_islands(board, coordinate) do
     Enum.find_value(board, :miss, fn {key, island} ->
